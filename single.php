@@ -8,7 +8,7 @@ get_header(); ?>
 	            while ( have_posts() ) : the_post();
 
 		            ?>
-                    <div class="Article"><img src="<?php the_post_thumbnail() ?>" alt="">
+                    <div class="Article" style="background: url(<?php the_post_thumbnail_url('full') ?>) no-repeat center center fixed;background-size:cover;">
                         <h2 class="ArticleTitle"><?php the_title() ?></h2></div>
                     <div class="Article-body">
                         <?php the_content() ?>

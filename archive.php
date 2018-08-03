@@ -16,11 +16,11 @@
 
 								?>
 								<li><a href="<?php the_permalink(); ?>">
-										<div class="Preview" style="background: url(<?php the_post_thumbnail() ?>) no-repeat center center fixed;background-size:cover;">
-											<h3><?php the_title() ?></h3>
-											<div>
+										<div class="Preview" style="background: url(<?php the_post_thumbnail_url('large') ?>) no-repeat center center fixed;background-size:cover;">
+                                            <h3 class="Preview-title"><?php the_title() ?></h3>
+                                            <div class="Preview-excerpt">
 												<?php the_excerpt() ?>
-											</div>
+                                            </div>
 										</div>
 									</a></li>
 								<li>

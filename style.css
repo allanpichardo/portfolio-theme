@@ -337,7 +337,8 @@ button:hover {
 }
 
 .Article-body {
-    padding: 48px;
+    padding-top: 48px;
+    padding-bottom: 48px;
     background-blend-mode:screen;
     text-rendering: optimizeLegibility;
 }
@@ -364,12 +365,19 @@ button:hover {
 
 .ContentWrapper {
     top: 0;
-    -webkit-box-sizing: content-box;
-    box-sizing: content-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
     height: 100vh;
     width: 100vw;
+    max-width: 100%;
     position: absolute;
     overflow-y:scroll;
+    padding: 16px;
+}
+
+.page-title {
+    color: white;
+    background-color: black;
 }
 
 .Cover {
@@ -427,6 +435,16 @@ button:hover {
 
 .Preview img {
     width: 100%;
+}
+
+.Preview-title {
+    background-color: black;
+    color: white;
+}
+
+.Preview-excerpt {
+    background-color: black;
+    color: white;
 }
 
 .ProjectsCover {
