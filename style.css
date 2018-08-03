@@ -1,0 +1,453 @@
+/*
+Theme Name: Allan 2018
+Theme URI: https://allanpichardo.com
+Author: Allan Pichardo
+Author URI: https://allanpichardo.com/
+Description: It's my theme!
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: allan2018
+Tags: allan, weirdo
+*/
+
+@import url(https://fonts.googleapis.com/icon?family=Material+Icons|Playfair+Display|Roboto);
+
+:root {
+    --main-bg-color: white;
+    --main-text-color: #111111;
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Roboto', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-body);
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width:100vw;
+    max-width: 100vw;
+    height:100vh;
+    overflow-x: hidden;
+    background-color: var(--main-bg-color);
+    color: var(--main-text-color);
+}
+
+pre {
+    padding: 4px;
+    font-size: 0.9rem;
+    background-color: #efefef;
+    color: #111111;
+    overflow: scroll;
+    text-rendering: optimizeLegibility;
+}
+
+p {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+}
+
+.ContentWrapper h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    background-blend-mode: screen;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: red;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+button {
+    color: var(--main-text-color);
+    cursor: pointer;
+    -webkit-transition: color ease 1s;
+    -o-transition: color ease 1s;
+    transition: color ease 1s;
+}
+
+button:hover {
+    color: gray;
+}
+
+#root {
+    min-width: 100%;
+    min-height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.App {
+    min-height: 100vh;
+    width: 100%;
+    display: grid;
+    grid-template-areas:
+            "head"
+            "body";
+    grid-template-rows: 64px 1fr;
+}
+
+.App-body {
+    max-width: 100vw;
+    grid-area: body;
+}
+
+.Header {
+    grid-area: head;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 64px;
+    display: grid;
+    grid-template-areas:
+            "logo . hamburger";
+    grid-template-columns: 100px 1fr 64px;
+    padding-left: 16px;
+    padding-right: 16px;
+    z-index: 100;
+}
+
+.Header-logo {
+    grid-area: logo;
+}
+
+.Header-toggle {
+    grid-area: hamburger;
+}
+
+.Navigation {
+    position: fixed;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 0;
+    height: 100vh;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+    background-color: var(--main-text-color);
+    -webkit-transition: width ease 0.5s;
+    -o-transition: width ease 0.5s;
+    transition: width ease 0.5s;
+    padding-right: 0;
+    overflow: hidden;
+}
+
+.Navigation a {
+    background-color:white;
+}
+
+.Navigation-menu {
+    margin-top: 48px;
+    margin-left: 12px;
+    font-family: var(--font-heading);
+    letter-spacing: 8px;
+    font-size: 24pt;
+    font-weight: bold;
+}
+
+.Navigation-open {
+    width: 300px;
+    padding-right: 16px;
+}
+
+.ToggleButton {
+    width: 100%;
+    height: 64px;
+    background: none;
+    padding: 0;
+    margin: 0;
+    border: none;
+    background: black;
+    -webkit-animation: togglecolor 2s infinite alternate-reverse;
+    animation: togglecolor 2s infinite alternate-reverse;
+}
+@-webkit-keyframes togglecolor {
+    from {color: white;}
+    to {color: gray;}
+}
+@keyframes togglecolor {
+    from {color: white;}
+    to {color: gray;}
+}
+
+.Animation {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    display:table;
+    margin: 0 auto;
+    width:100%;
+    height:100vh;
+    border:0;
+    overflow-y: hidden;
+
+}
+
+.Animation canvas {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+}
+
+.Animation h1 {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    z-index: 5;
+    position: absolute;
+    background-color: hsl(0, 0%, 100%);
+    mix-blend-mode: screen;
+    font-size: 50vh;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100vw;
+    font-family: var(--font-body);
+    font-weight: 900;
+    max-height: 100vh;
+    display:table-cell;
+    vertical-align:middle;
+    -o-text-overflow: clip;
+    text-overflow: clip;
+    overflow-x: hidden;
+}
+
+.background_static_lines {
+    background: -webkit-repeating-linear-gradient(
+            45deg,
+            white,
+            white 20px,
+            black 20px,
+            black 40px
+    ) fixed;
+    background: -o-repeating-linear-gradient(
+            45deg,
+            white,
+            white 20px,
+            black 20px,
+            black 40px
+    ) fixed;
+    background: repeating-linear-gradient(
+            45deg,
+            white,
+            white 20px,
+            black 20px,
+            black 40px
+    ) fixed;
+}
+
+.background_animated_lines {
+    background: -webkit-repeating-linear-gradient(135deg,black,black 20px,white 20px,white 40px);
+    background: -o-repeating-linear-gradient(135deg,black,black 20px,white 20px,white 40px);
+    background: repeating-linear-gradient(-45deg,black,black 20px,white 20px,white 40px);
+    background-size:56px 56px;/* This is unique for this background, need to find a pattern and develop a formula */
+    background-position-x:0%;
+    -webkit-animation:'slide' 20s infinite linear forwards;
+}
+
+@-webkit-keyframes 'slide' {
+    0%{
+        background-position-x:0%;
+    }
+    100% {
+        background-position-x:100%;
+    }
+}
+
+.Animation-text1 {
+
+}
+
+.Animation-text2 {
+
+}
+
+.Home {
+    top: 0;
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    overflow-y:hidden;
+    display: grid;
+    grid-template-areas:
+            ". . ."
+            ". h ."
+            ". . .";
+    grid-template-rows: 64px 1fr 64px;
+    grid-template-columns: 0px 1fr 0px;
+    align-self: center;
+    justify-self: center;
+}
+
+.Home svg {
+    width: 100%;
+    /*height: 30%;*/
+
+}
+
+.Home-hero {
+    height: 100%;
+    vertical-align: middle;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    grid-area: h;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.heroTextTop {
+    font-family: var(--font-heading);
+    font-weight: 400;
+    font-size: 25vw;
+    fill-opacity: 1;
+}
+
+.heroTextBottom {
+    font-family: var(--font-heading);
+    font-weight: 100;
+    font-size: 25vw;
+    fill-opacity: 0;
+    fill:white;
+}
+
+.Article {
+    display: grid;
+    grid-template-columns: 200px 1fr 2fr;
+    grid-template-rows: minmax(100px, 5fr) -webkit-min-content 2fr;
+    grid-template-rows: minmax(100px, 5fr) min-content 2fr;
+    max-width: 60rem;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.Article-body {
+    padding: 48px;
+    background-blend-mode:screen;
+    text-rendering: optimizeLegibility;
+}
+
+.Article img {
+    grid-column: 1 / 3;
+    grid-row: 1 / span 3;
+    -o-object-fit: cover;
+    object-fit: cover;
+    -webkit-box-shadow: 1rem 1rem black;
+    box-shadow: 1rem 1rem black;
+}
+
+.Article .ArticleTitle {
+    font-family: var(--font-heading);
+    font-weight: normal;
+    font-size: 2.4rem;
+    line-height: 1.4;
+    margin: 0;
+    grid-column: 2 / 4;
+    grid-row: 2;
+    background: red;
+}
+
+.ContentWrapper {
+    top: 0;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    overflow-y:scroll;
+}
+
+.Cover {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-align:center;
+    align-items:center;
+    height: 100vh;
+    background-color: white;
+}
+
+.Cover span {
+    display: block;
+    width: 40vmin;
+    height: 40vmin;
+    border-radius: 50%;
+}
+
+.Cover h2 {
+    display: block;
+    color: white;
+    letter-spacing: 10px;
+    margin: 10px;
+}
+
+.Cover h1 {
+    position: absolute;
+    top: 19vh;
+    left: 14vw;
+}
+
+.ArticleList {
+    -webkit-columns: 250px;
+    columns: 250px;
+    -webkit-column-gap: 20px;
+    column-gap: 20px;
+}
+
+.ArticleList span {
+    display: block;
+    width: 100%;
+    height: 40vmin;
+}
+
+.Preview {
+    -webkit-column-break-inside: avoid;
+    break-inside: avoid-column;
+    margin-bottom: 1rem;
+    padding: 20px;
+    background-color:white;
+    display:block;
+}
+
+.Preview img {
+    width: 100%;
+}
+
+.ProjectsCover {
+
+    display: grid;
+    grid-template-columns: 2fr 3fr 1fr 3fr 1fr 3fr 2fr;
+    grid-template-rows: 2fr 3fr 1fr 3fr 1fr 3fr 2fr;
+    grid-gap: 1fr;
+}
+
+.ProjectsCover span:nth-child(2) {
+    grid-column: 4;
+    grid-row: 4;
+}
+
+.ProjectsCover span {
+    background-color: white;
+    border-radius: 0%;
+}
+
+.ProjectsCover h1 {
+    position: absolute;
+    top:36vh;
+}
