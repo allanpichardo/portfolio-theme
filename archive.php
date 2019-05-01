@@ -24,7 +24,7 @@
 										</div>
 									</a></li>
 								<li>
-									<span class="background_animated_lines"></span>
+									<span class="background_animated_lines" style="height: 250px;"></span>
 								</li>
 								<?php
 

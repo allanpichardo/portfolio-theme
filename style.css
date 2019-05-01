@@ -433,6 +433,7 @@ button:hover {
     padding: 20px;
     background-color:white;
     display:block;
+    height: 250px;
 }
 
 .Preview img {
