@@ -13,8 +13,8 @@ Tags: allan, weirdo
 @import url(https://fonts.googleapis.com/icon?family=Material+Icons|Playfair+Display|Roboto);
 
 :root {
-    --main-bg-color: white;
-    --main-text-color: #111111;
+    --main-bg-color: black;
+    --main-text-color: white;
     --font-heading: 'Playfair Display', serif;
     --font-body: 'Roboto', sans-serif;
 }
@@ -154,6 +154,7 @@ button:hover {
     letter-spacing: 8px;
     font-size: 24pt;
     font-weight: bold;
+    width: 300px;
 }
 
 .Navigation-open {
